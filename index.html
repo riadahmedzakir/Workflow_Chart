@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workflow Flowchart</title>
+    <link rel="stylesheet" href="./lib/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./lib/raphael.min.js"></script>
+    <script src="./lib/flowchart.min.js"></script>
+    <script src="./lib/angular.js"></script>
+    <script src="./lib/angular-material.min.js"></script>
+    <script src="./lib/angular-animate.min.js"></script>
+    <script src="./lib/angular-aria.min.js"></script>
+    <script src="./lib/angular-messages.min.js"></script>
+    <script src="./lib/lodash.js"></script>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/mongo-db.js"></script>
+    <script src="./app/main.controller.js"></script>
+</head>
+
+<body ng-cloak style="padding:15px; margin:0px;" ng-controller="MainController as vm">
+    <h2>Workflow List </h2>
+    <div flex="100">
+        <md-input-container class="half-width">
+            <label>Workflows :</label>
+            <md-select ng-model="vm.selectedWorkflow" required ng-change="vm.getWorkflowDatas()">
+                <md-option ng-repeat="workflow in vm.workflowList" value="{{workflow._id}}">
+                    {{workflow.WorkFlowName}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+
+    <div id="diagram"></div>
+</body>
+
+</html>
