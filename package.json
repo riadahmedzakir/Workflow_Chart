@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular-material": "^1.1.19",
-    "electron": "^6.0.1",
+    "electron": "^15.5.5",
     "mongodb": "^3.3.0-beta2"
   }
 }
